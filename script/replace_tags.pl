@@ -1,5 +1,10 @@
 #!/usr/bin/perl
 
+use warnings;
+use strict;
+use FindBin qw($Bin);
+use lib "$Bin/../lib";
+
 use ReplaceTags;
 
 ReplaceTags::run({

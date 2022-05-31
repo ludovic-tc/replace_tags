@@ -70,3 +70,50 @@ sub process_template {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+ReplaceTags - template conversion utility
+
+=head1 SYNOPSIS
+
+To update template files in the target directory containing the
+tags !expires!, !title! and !content! with their corresponding
+hash values:
+
+    use ReplaceTags;
+
+    use ReplaceTags;
+
+    ReplaceTags::run({
+        expires => 'Mon, 31 Dec 2012 12:00:00 GMT',
+        title   => 'Replace Tags',
+        content => 'Hello, World!',
+    });
+
+=head1 DESCRIPTION
+
+This module converts template files containing tags of the form:
+
+    !name_of_tag!
+
+to files containing production-ready content. 
+
+=head1 BUGS/CAVEATS/etc
+
+This module might well benefit from becoming a class. 
+
+=head1 AUTHOR
+
+Ludo Tolhurst-Cleaver <camel@ltcdev.com>
+
+=head1 COPYRIGHT and LICENSE
+
+This software may be used on the same terms as Perl itself. 
+
+=cut
+
