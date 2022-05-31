@@ -50,7 +50,7 @@ ReplaceTags::run({
 	content => 'Hello, World!',
 });
 
-file_contents_eq $templatepath, $output, "template successfully converted to expected output file";
+file_contents_eq_or_diff $templatepath, $output, "template successfully converted to expected output file";
 
 # reset template file
 path($templatepath)->spew_utf8($template);
@@ -59,3 +59,36 @@ file_contents_eq $templatepath, $template, "template in expected original state"
 
 done_testing;
 
+=pod
+
+=head1 NAME
+
+replace_tags.t
+
+=head1 SYNOPSIS
+
+From the replace_tags project root, run:
+
+    prove -t
+
+=head1 DESCRIPTION
+
+Regression test for ReplaceTags.pm.
+
+This test ensures that ReplaceTags.pm works in its original form, in
+which tags in a template file F<home.tpl> in the neighbouring
+F<templates/> folder are converted to the desired text.
+
+=head1 BUGS/CAVEATS/etc
+
+...
+
+=head1 AUTHOR
+
+Ludo Tolhurst-Cleaver <camel@ltcdev.com>
+
+=head1 COPYRIGHT and LICENSE
+
+This software may be used on the same terms as Perl itself. 
+
+=cut
